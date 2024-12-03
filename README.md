@@ -1,6 +1,7 @@
 # Izbori - Projekat iz Sistema baza podataka
 
 - Zadatak:
+
 Za potrebe jedne političke strane potrebno je projektovati bazu podataka koja će voditi evidenciju o svim 
 podacima neophodnim za vođenje kampanje na predsedničkim izborima. Za potrebe kampanje angažovan 
 je veliki broj aktivista stranke. Za svakog učesnika u kampanji pamti se jedinstveni identifikator, ime, ime 
