@@ -1,0 +1,506 @@
+--------------------------------------------------------
+--  DDL for Table UCESNIK
+--------------------------------------------------------
+
+  CREATE TABLE "UCESNIK" 
+   (	"ID" NUMBER(10), 
+	"LIME" VARCHAR2(30), 
+	"IME_RODITELJA" VARCHAR2(30),
+	"PREZIME" VARCHAR2(30), 
+	"DATUM_RODJENJA" DATE, 
+	"ADRESA" VARCHAR2(100),
+	"BRTEL1" NUMBER(10), 
+	"BRTEL2" NUMBER(10), 
+	"EMAIL1" VARCHAR2(50),
+	"EMAIL2" VARCHAR2(50), 
+	"TIP" VARCHAR2(30), 
+	"IME_OPSTINE" VARCHAR2(30),
+	"ADRESA_KANCELARIJE" VARCHAR2(100), 
+	"ID_GL_MESTA" NUMBER(10), 
+	"PRIMEDBE"  VARCHAR2(200),
+	"ID_KOORDINATORA" NUMBER(10) 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table GLASACKO_MESTO
+--------------------------------------------------------
+
+  CREATE TABLE "GLASACKO_MESTO" 
+   (	"ID" NUMBER(10), 
+	"NAZIV_IZBORNE_JEDINICE" VARCHAR2(30), 
+	"BR_GLASACKOG_MESTA" NUMBER(10),
+	"BR_BIRACA" NUMBER(10)
+   ) ;
+--------------------------------------------------------
+--  DDL for Table KRUGOVI
+--------------------------------------------------------
+
+  CREATE TABLE "KRUGOVI" 
+   ( 
+	"BR_KRUGA" VARCHAR2(30), 
+	"BR_BIRACA_IZASLI" NUMBER(10),
+	"PROCENAT_ZA" DECIMAL(3,2) 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table REZULTATI
+--------------------------------------------------------
+
+  CREATE TABLE "REZULTATI" 
+   ( 
+	"ID_KRUGA" VARCHAR2(30), 
+	"ID_GLASACKOG_MESTA" NUMBER(10) 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table REKLAMA
+--------------------------------------------------------
+
+  CREATE TABLE "REKLAMA" 
+   (	"ID" NUMBER(10), 
+	"CENA" DECIMAL(7,2), 
+	"VREMENSKI_PERIOD" NUMBER(3),
+	"FPANO" CHAR(2), 
+	"GRAD" VARCHAR2(30), 
+	"ULICA" VARCHAR2(30),
+	"POVRSINA" DECIMAL(4,2), 
+	"AGENCIJA" VARCHAR2(30), 
+	"FNOVINE" CHAR(2),
+	"NAZIV_NOVINA" VARCHAR2(30), 
+	"BOJA" CHAR(2), 
+	"FRADIO_TV" CHAR(2),
+	"NAZIV_RADIO_TV" VARCHAR2(30), 
+	"BR_EMITOVANJA" NUMBER(10), 
+	"TRAJANJE" NUMBER(4) 	 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table AKCIJA
+--------------------------------------------------------
+
+  CREATE TABLE "AKCIJA" 
+   (	"ID" NUMBER(10), 
+	"NAZIV" VARCHAR2(30), 
+	"GRAD" VARCHAR2(30),
+	"LOKACIJA" VARCHAR2(100), 
+	"FDELJENJE_LETAKA" CHAR(2), 
+	"FSUSRET_SA_GRADJANIMA" CHAR(2),
+	"VREME" DATE, 
+	"FMITING" CHAR(2), 
+	"FNA_OTVORENOM" CHAR(2),
+	"FNA_ZATVORENOM" CHAR(2), 
+	"NAZIV_FIRME" VARCHAR2(30), 
+	"CENA_PROSTORA" DECIMAL(7,2),
+	"ID_KOORDINATORA" NUMBER(10)		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table GOST
+--------------------------------------------------------
+
+  CREATE TABLE "GOST" 
+   (	"ID" NUMBER(10), 
+	"IME" VARCHAR2(30), 
+	"PREZIME" VARCHAR2(30),
+	"FUNKCIJA" VARCHAR2(30) 			 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table JE_GOST
+--------------------------------------------------------
+
+  CREATE TABLE "JE_GOST" 
+   (	"ID_GOSTA" NUMBER(10), 
+	"ID_MITINGA" NUMBER(10)		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table INTERVJU_NOVINE
+--------------------------------------------------------
+
+  CREATE TABLE "INTERVJU_NOVINE" 
+   (	"ID" NUMBER(10), 
+	"NAZIV_LISTA" VARCHAR2(30), 
+	"DATUM_PISANJA" DATE,
+	"DATUM_OBJAVLJIVANJA" DATE, 
+	"NOVINAR1" VARCHAR2(100), 
+	"NOVINAR2" VARCHAR2(100)		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table TV_I_RADIO_EMISIJE
+--------------------------------------------------------
+
+  CREATE TABLE "TV_I_RADIO_EMISIJE" 
+   (	"ID" NUMBER(10), 
+	"NAZIV_STANICE" VARCHAR2(30), 
+	"NAZIV_EMISIJE" VARCHAR2(30),
+	"IME_VODITELJA" VARCHAR2(100), 
+	"GLEDANOST" DECIMAL(3,2)		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table TV_DUELI
+--------------------------------------------------------
+
+  CREATE TABLE "TV_DUELI" 
+   (	"ID" NUMBER(10), 
+	"NAZIV_STANICE" VARCHAR2(30), 
+	"NAZIV_EMISIJE" VARCHAR2(30),
+	"IME_VODITELJA" VARCHAR2(100), 
+	"GLEDANOST" DECIMAL(3,2) 		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table PROTIVKANDIDATI
+--------------------------------------------------------
+
+  CREATE TABLE "PROTIVKANDIDATI" 
+   (	"ID_DUELA" NUMBER(10), 
+	"PROTIVKANDIDAT" VARCHAR2(100)		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Table SPISAK_PITANJA
+--------------------------------------------------------
+
+  CREATE TABLE "SPISAK_PITANJA" 
+   (	"ID_DUELA" NUMBER(10), 
+	"PITANJE" VARCHAR2(300)		 
+   ) ;
+--------------------------------------------------------
+--  DDL for Index UCESNIK_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "UCESNIK_PK" ON "UCESNIK" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index GLASACKO_MESTO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GLASACKO_MESTO_PK" ON "GLASACKO_MESTO" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index KRUGOVI_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "KRUGOVI_PK" ON "KRUGOVI" ("BR_KRUGA") 
+  ;
+--------------------------------------------------------
+--  DDL for Index REZULTATI_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "REZULTATI_PK" ON "REZULTATI" ("ID_KRUGA", "ID_GLASACKOG_MESTA") 
+  ;
+--------------------------------------------------------
+--  DDL for Index REKLAMA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "REKLAMA_PK" ON "REKLAMA" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index AKCIJA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AKCIJA_PK" ON "AKCIJA" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index GOST_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "GOST_PK" ON "GOST" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index JE_GOST_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JE_GOST_PK" ON "JE_GOST" ("ID_GOSTA", "ID_MITINGA") 
+  ;
+--------------------------------------------------------
+--  DDL for Index INTERVJU_NOVINE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "INTERVJU_NOVINE_PK" ON "INTERVJU_NOVINE" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index TV_I_RADIO_EMISIJE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TV_I_RADIO_EMISIJE_PK" ON "TV_I_RADIO_EMISIJE" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index TV_DUELI_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TV_DUELI_PK" ON "TV_DUELI" ("ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PROTIVKANDIDATI_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROTIVKANDIDATI_PK" ON "PROTIVKANDIDATI" ("ID_DUELA", "PROTIVKANDIDAT") 
+  ;
+--------------------------------------------------------
+--  DDL for Index SPISAK_PITANJA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SPISAK_PITANJA_PK" ON "SPISAK_PITANJA" ("ID_DUELA", "PITANJE") 
+  ;
+--------------------------------------------------------
+--  Constraints for Table UCESNIK
+--------------------------------------------------------
+  ALTER TABLE "UCESNIK" ADD CONSTRAINT "UCESNIK_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "UCESNIK" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("LIME" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("IME_RODITELJA" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("PREZIME" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("DATUM_RODJENJA" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("ADRESA" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("BRTEL1" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" MODIFY ("EMAIL1" NOT NULL ENABLE);
+  ALTER TABLE "UCESNIK" ADD CONSTRAINT "UCESNIK_BRTEL1" UNIQUE ("BRTEL1") ENABLE;
+  ALTER TABLE "UCESNIK" ADD CONSTRAINT "UCESNIK_EMAIL1" UNIQUE ("EMAIL1") ENABLE;
+  ALTER TABLE "UCESNIK" ADD CONSTRAINT "UCESNIK_TIP_CHK" CHECK (TIP IN ('KOORDINATOR', 'POMOĆNIK')) ENABLE;
+--------------------------------------------------------
+--  Constraints for Table GLASACKO_MESTO
+--------------------------------------------------------
+  ALTER TABLE "GLASACKO_MESTO" ADD CONSTRAINT "GLASACKO_MESTO_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "GLASACKO_MESTO" MODIFY ("ID" NOT NULL ENABLE);
+ --------------------------------------------------------
+--  Constraints for Table KRUGOVI
+--------------------------------------------------------
+  ALTER TABLE "KRUGOVI" ADD CONSTRAINT "KRUGOVI_PK" PRIMARY KEY ("BR_KRUGA") ENABLE;
+  ALTER TABLE "KRUGOVI" MODIFY ("BR_KRUGA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table REZULTAT
+--------------------------------------------------------
+  ALTER TABLE "REZULTATI" ADD CONSTRAINT "REZULTATI_PK" PRIMARY KEY ("ID_KRUGA", "ID_GLASACKOG_MESTA") ENABLE;
+  ALTER TABLE "REZULTATI" MODIFY ("ID_KRUGA" NOT NULL ENABLE);
+  ALTER TABLE "REZULTATI" MODIFY ("ID_GLASACKOG_MESTA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table REKLAMA
+--------------------------------------------------------
+  ALTER TABLE "REKLAMA" ADD CONSTRAINT "REKLAMA_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "REKLAMA" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "REKLAMA" MODIFY ("CENA" NOT NULL ENABLE);
+  ALTER TABLE "REKLAMA" MODIFY ("VREMENSKI_PERIOD" NOT NULL ENABLE);
+  ALTER TABLE "REKLAMA" ADD CONSTRAINT "REKLAMA_FPANO_CHK" CHECK (FPANO IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "REKLAMA" ADD CONSTRAINT "REKLAMA_FNOVINE_CHK" CHECK (FNOVINE IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "REKLAMA" ADD CONSTRAINT "REKLAMA_FRADIO_TV_CHK" CHECK (FRADIO_TV IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "REKLAMA" ADD CONSTRAINT "REKLAMA_BOJA_CHK" CHECK (BOJA IN ('Da', 'Ne')) ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AKCIJA
+--------------------------------------------------------
+  ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "AKCIJA" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "AKCIJA" MODIFY ("NAZIV" NOT NULL ENABLE);
+  ALTER TABLE "AKCIJA" MODIFY ("GRAD" NOT NULL ENABLE);
+  ALTER TABLE "AKCIJA" MODIFY ("LOKACIJA" NOT NULL ENABLE);
+  ALTER TABLE "AKCIJA" MODIFY ("ID_KOORDINATORA" NOT NULL ENABLE);
+  ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_FDELJENJE_LETAKA_CHK" CHECK (FDELJENJE_LETAKA IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_FSUSRET_SA_GRADJ_CHK" CHECK (FSUSRET_SA_GRADJANIMA IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_FMITING_CHK" CHECK (FMITING IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_FNA_OTVORENOM_CHK" CHECK (FNA_OTVORENOM IN ('Da', 'Ne')) ENABLE;
+  ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_FNA_ZATVORENOM_CHK" CHECK (FNA_ZATVORENOM IN ('Da', 'Ne')) ENABLE;
+--------------------------------------------------------
+--  Constraints for Table GOST
+--------------------------------------------------------
+  ALTER TABLE "GOST" ADD CONSTRAINT "GOST_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "GOST" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "GOST" MODIFY ("IME" NOT NULL ENABLE);
+  ALTER TABLE "GOST" MODIFY ("PREZIME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table JE_GOST
+--------------------------------------------------------
+  ALTER TABLE "JE_GOST" ADD CONSTRAINT "JE_GOST_PK" PRIMARY KEY ("ID_GOSTA", "ID_MITINGA") ENABLE;
+  ALTER TABLE "JE_GOST" MODIFY ("ID_GOSTA" NOT NULL ENABLE);
+  ALTER TABLE "JE_GOST" MODIFY ("ID_MITINGA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INTERVJU_NOVINE
+--------------------------------------------------------
+  ALTER TABLE "INTERVJU_NOVINE" ADD CONSTRAINT "INTERVJU_NOVINE_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "INTERVJU_NOVINE" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "INTERVJU_NOVINE" MODIFY ("NAZIV_LISTA" NOT NULL ENABLE);
+  ALTER TABLE "INTERVJU_NOVINE" MODIFY ("NOVINAR1" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TV_I_RADIO_EMISIJE
+--------------------------------------------------------
+  ALTER TABLE "TV_I_RADIO_EMISIJE" ADD CONSTRAINT "TV_I_RADIO_EMISIJE_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "TV_I_RADIO_EMISIJE" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "TV_I_RADIO_EMISIJE" MODIFY ("NAZIV_STANICE" NOT NULL ENABLE);
+  ALTER TABLE "TV_I_RADIO_EMISIJE" MODIFY ("NAZIV_EMISIJE" NOT NULL ENABLE);
+  ALTER TABLE "TV_I_RADIO_EMISIJE" MODIFY ("IME_VODITELJA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TV_DUELI
+--------------------------------------------------------
+  ALTER TABLE "TV_DUELI" ADD CONSTRAINT "TV_DUELI_PK" PRIMARY KEY ("ID") ENABLE;
+  ALTER TABLE "TV_DUELI" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "TV_DUELI" MODIFY ("NAZIV_STANICE" NOT NULL ENABLE);
+  ALTER TABLE "TV_DUELI" MODIFY ("NAZIV_EMISIJE" NOT NULL ENABLE);
+  ALTER TABLE "TV_DUELI" MODIFY ("IME_VODITELJA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PROTIVKANDIDATI
+--------------------------------------------------------
+  ALTER TABLE "PROTIVKANDIDATI" ADD CONSTRAINT "PROTIVKANDIDATI_PK" PRIMARY KEY ("ID_DUELA", "PROTIVKANDIDAT") ENABLE;
+  ALTER TABLE "PROTIVKANDIDATI" MODIFY ("ID_DUELA" NOT NULL ENABLE);
+  ALTER TABLE "PROTIVKANDIDATI" MODIFY ("PROTIVKANDIDAT" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SPISAK_PITANJA
+--------------------------------------------------------
+  ALTER TABLE "SPISAK_PITANJA" ADD CONSTRAINT "SPISAK_PITANJA_PK" PRIMARY KEY ("ID_DUELA", "PITANJE") ENABLE;
+  ALTER TABLE "SPISAK_PITANJA" MODIFY ("ID_DUELA" NOT NULL ENABLE);
+  ALTER TABLE "SPISAK_PITANJA" MODIFY ("PITANJE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table UCESNIK
+--------------------------------------------------------
+
+	ALTER TABLE "UCESNIK" ADD CONSTRAINT "UCESNIK_KOORDINATOR_FK" FOREIGN KEY ("ID_KOORDINATORA")
+	  REFERENCES "UCESNIK" ("ID") ENABLE;
+	  
+	ALTER TABLE "UCESNIK" ADD CONSTRAINT "UCESNIK_GL_MESTO_FK" FOREIGN KEY ("ID_GL_MESTA")
+	  REFERENCES "GLASACKO_MESTO" ("ID") ENABLE;
+	  
+--------------------------------------------------------	  
+--  Ref Constraints for Table REZULTATI
+--------------------------------------------------------
+
+	ALTER TABLE "REZULTATI" ADD CONSTRAINT "REZULTATI_KRUGOVA_FK" FOREIGN KEY ("ID_KRUGA")
+	  REFERENCES "KRUGOVI" ("BR_KRUGA") ENABLE;
+	  
+	ALTER TABLE "REZULTATI" ADD CONSTRAINT "REZULTATI_GL_MESTO_FK" FOREIGN KEY ("ID_GLASACKOG_MESTA")
+	  REFERENCES "GLASACKO_MESTO" ("ID") ENABLE;
+
+--------------------------------------------------------	  
+--  Ref Constraints for Table AKCIJA
+--------------------------------------------------------
+
+	ALTER TABLE "AKCIJA" ADD CONSTRAINT "AKCIJA_UCESNIK_FK" FOREIGN KEY ("ID_KOORDINATORA")
+	  REFERENCES "UCESNIK" ("ID") ENABLE;
+
+--------------------------------------------------------	  
+--  Ref Constraints for Table JE_GOST
+--------------------------------------------------------
+
+	ALTER TABLE "JE_GOST" ADD CONSTRAINT "GOST_FK" FOREIGN KEY ("ID_GOSTA")
+	  REFERENCES "GOST" ("ID") ENABLE;
+	  
+	ALTER TABLE "JE_GOST" ADD CONSTRAINT "GOST_MITING_FK" FOREIGN KEY ("ID_MITINGA")
+	  REFERENCES "AKCIJA" ("ID") ENABLE;
+	  
+--------------------------------------------------------	  
+--  Ref Constraints for Table PROTIVKANDIDATI
+--------------------------------------------------------
+
+	ALTER TABLE "PROTIVKANDIDATI" ADD CONSTRAINT "PROTIVKANDIDATI_DUEL_FK" FOREIGN KEY ("ID_DUELA")
+	  REFERENCES "TV_DUELI" ("ID") ENABLE;
+
+--------------------------------------------------------	  
+--  Ref Constraints for Table SPISAK_PITANJA
+--------------------------------------------------------
+
+	ALTER TABLE "SPISAK_PITANJA" ADD CONSTRAINT "SPISAK_DUEL_FK" FOREIGN KEY ("ID_DUELA")
+	  REFERENCES "TV_DUELI" ("ID") ENABLE;
+
+
+
+	    
+--------------------------------------------------------
+--  DDL for Sequence UCESNIK_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "UCESNIK_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+--------------------------------------------------------
+--  DDL for Sequence GLASACKO_MESTO_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "GLASACKO_MESTO_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+--------------------------------------------------------
+--  DDL for Sequence REKLAMA_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "REKLAMA_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+--------------------------------------------------------
+--  DDL for Sequence AKCIJA_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "AKCIJA_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+--------------------------------------------------------
+--  DDL for Sequence GOST_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "GOST_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+--------------------------------------------------------
+--  DDL for Sequence INTERVJU_NOVINE_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "INTERVJU_NOVINE_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+--------------------------------------------------------
+--  DDL for Sequence TV_I_RADIO_EMISIJE_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "TV_I_RADIO_EMISIJE_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+--------------------------------------------------------
+--  DDL for Sequence TV_DUELI_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "TV_DUELI_ID_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 
+		INCREMENT BY 1 START WITH 1 CACHE 20 ORDER  NOCYCLE ;
+		
+		
+
+
+
+--------------------------------------------------------
+--  DDL for Trigger UCESNIK_AUTO_PK
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "UCESNIK_AUTO_PK" 
+    BEFORE INSERT
+    ON UCESNIK
+    REFERENCING NEW AS NEW
+    FOR EACH ROW
+BEGIN
+    SELECT UCESNIK_ID_SEQ.NEXTVAL INTO :NEW.ID FROM DUAL;
+END;
+/
+ALTER TRIGGER "UCESNIK_AUTO_PK" ENABLE;
+
+--------------------------------------------------------
+--  DDL for Trigger REKLAMA_AUTO_PK
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "REKLAMA_AUTO_PK" 
+    BEFORE INSERT
+    ON REKLAMA
+    REFERENCING NEW AS NEW
+    FOR EACH ROW
+BEGIN
+    SELECT REKLAMA_ID_SEQ.NEXTVAL INTO :NEW.ID FROM DUAL;
+END;
+/
+ALTER TRIGGER "REKLAMA_AUTO_PK" ENABLE;
+
+--------------------------------------------------------
+--  DDL for Trigger AKCIJA_AUTO_PK
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AKCIJA_AUTO_PK" 
+    BEFORE INSERT
+    ON AKCIJA
+    REFERENCING NEW AS NEW
+    FOR EACH ROW
+BEGIN
+    SELECT AKCIJA_ID_SEQ.NEXTVAL INTO :NEW.ID FROM DUAL;
+END;
+/
+ALTER TRIGGER "AKCIJA_AUTO_PK" ENABLE;
+

@@ -1,0 +1,228 @@
+--------------------------------------------------------
+--  DDL for inserting values into tables
+--------------------------------------------------------
+
+REM INSERTING into GLASACKO_MESTO
+SET DEFINE OFF;
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('1','Nis','1','1500');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('2','Nis','2','2460');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('3','Nis','3','1820');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('4','Kursumlija','1','1200');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('5','Kursumlija','2','2130');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('6','Leskovac','1','3000');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('7','Beograd','1','2800');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASaCKOG_MESTA,BR_BIRACA) values ('8','Beograd','2','2340');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASaCKOG_MESTA,BR_BIRACA) values ('9','Beograd','3','1500');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('10','Beograd','4','1760');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('11','Valjevo','1','1000');
+Insert into GLASACKO_MESTO (ID,NAZIV_IZBORNE_JEDINICE,BR_GLASACKOG_MESTA,BR_BIRACA) values ('12','Valjevo','2','2100');
+
+REM INSERTING into UCESNIK
+SET DEFINE OFF;
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,BRTEL2,EMAIL1,EMAIL2) values ('1','Marko','Jovan','Markovic',TO_DATE('1965-04-23','YYYY-MM-DD'),'Kosovska 24','063444555','062123456','markom@gmail.com','markovicmarko@gmail.com');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,IME_OPSTINE,ADRESA_KANCELARIJE) values ('2','Milos','Aleksa','Milic',TO_DATE('1985-10-02','YYYY-MM-DD'),'Vuka Karadzica 13','065554555','milosmilic@gmail.com','KOORDINATOR','Palilula','Borska 2');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,BRTEL2,EMAIL1,TIP,IME_OPSTINE,ADRESA_KANCELARIJE) values ('3','Jana','Dragan','Krstic',TO_DATE('1972-06-19','YYYY-MM-DD'),'Jasmina 134','062333858','064511895','kjana@gmail.com','KOORDINATOR','Kursumlija','Palih boraca 65');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,IME_OPSTINE,ADRESA_KANCELARIJE) values ('4','Branko','Jovan','Stankovic',TO_DATE('1960-07-01','YYYY-MM-DD'),'Vranjska 18','065486245','stankbranko@gmail.com','KOORDINATOR','Leskovac','Njegoseva 5');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,ID_GL_MESTA,PRIMEDBE) values ('6','Mladen','Danko','Nikolic',TO_DATE('1985-07-23','YYYY-MM-DD'),'Toplicka 64','063554862','nmladen7@gmail.com','2','Kasnjenje pocetka glasanja');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,ID_GL_MESTA) values ('7','Zorana','Nenad','Jovic',TO_DATE('1969-02-13','YYYY-MM-DD'),'Svete Ane 4','064256895','zoranazoky@gmail.com','9');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,BRTEL2,EMAIL1,EMAIL2,TIP,ID_KOORDINATORA) values ('5','Stanimir','Zvezdan','Ilic',TO_DATE('1980-11-29','YYYY-MM-DD'),'Bulevar Nemanjica 124','061025642','066254778','ilics@gmail.com','stanimirilic@gmail.com','POMOĆNIK','2');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,EMAIL2,TIP,ID_KOORDINATORA) values ('8','Sreten','Jakov','Matic',TO_DATE('1976-11-02','YYYY-MM-DD'),'Bulevarska 12','064255476','smatic@gmail.com','sretenmatic@gmail.com','POMOĆNIK','2');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,ID_KOORDINATORA) values ('9','Jovan','Ivan','Jovanovic',TO_DATE('1986-01-14','YYYY-MM-DD'),'Carska 42','069458776','jjovan@gmail.com','POMOĆNIK','2');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,BRTEL2,EMAIL1,TIP,ID_KOORDINATORA) values ('10','Ana','Zvezdan','Jankovic',TO_DATE('1990-08-28','YYYY-MM-DD'),'Nemanjina 36','062554642','066452663','jankana90@gmail.com','POMOĆNIK','2');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,BRTEL2,EMAIL1,TIP,ID_KOORDINATORA) values ('11','Janko','Igor','Jankovic',TO_DATE('1984-04-09','YYYY-MM-DD'),'Nikole Tesle 5','061543265','064125639','jankojanko@gmail.com','POMOĆNIK','3');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,ID_KOORDINATORA) values ('12','Ivana','Marko','Milenkovic',TO_DATE('1989-10-24','YYYY-MM-DD'),'Jovina 124','063259968','ivanam89@gmail.com','POMOĆNIK','3');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,ID_KOORDINATORA) values ('13','Jovan','Aleksa','Karadzic',TO_DATE('1980-05-20','YYYY-MM-DD'),'Dobrice Cosic 14','064278871','jovankaradzicc@gmail.com','POMOĆNIK','3');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,BRTEL2,EMAIL1,TIP,ID_KOORDINATORA) values ('14','Ilija','Marko','Gasic',TO_DATE('1978-04-04','YYYY-MM-DD'),'Kosovska 84','061659323','066225899','gasici@gmail.com','POMOĆNIK','3');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,ID_KOORDINATORA) values ('15','Sara','Aleksandar','Savic',TO_DATE('1992-11-01','YYYY-MM-DD'),'Bulevar Nemanjica 32','064552789','savicsara992@gmail.com','POMOĆNIK','4');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,ID_KOORDINATORA) values ('16','Nikolina','Zoran','Djordjevic',TO_DATE('1987-02-05','YYYY-MM-DD'),'Pobedina 4','069123123','ninadj0@gmail.com','POMOĆNIK','4');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,EMAIL2,TIP,ID_KOORDINATORA) values ('17','Dusan','Stefan','Stojanovic',TO_DATE('1972-07-21','YYYY-MM-DD'),'16 februar 86','062766789','dusan972@gmail.com','stjanovicdusan@gmail.com','POMOĆNIK','4');
+Insert into UCESNIK (ID,LIME,IME_RODITELJA,PREZIME,DATUM_RODJENJA,ADRESA,BRTEL1,EMAIL1,TIP,ID_KOORDINATORA) values ('18','Nikola','Boban','Popovic',TO_DATE('1990-09-17','YYYY-MM-DD'),'Bulevar oslobodjenja 103','064422173','nikolapopovic@gmail.com','POMOĆNIK','4');
+
+
+REM INSERTING into KRUGOVI
+SET DEFINE OFF;
+Insert into KRUGOVI (BR_KRUGA,BR_BIRACA_IZASLI,PROCENAT_ZA) values ('Prvi','25900','0.42');
+Insert into KRUGOVI (BR_KRUGA,BR_BIRACA_IZASLI,PROCENAT_ZA) values ('Ponovljeni prvi','22173','0.46');
+Insert into KRUGOVI (BR_KRUGA,BR_BIRACA_IZASLI,PROCENAT_ZA) values ('Drugi','27462','0.31');
+Insert into KRUGOVI (BR_KRUGA,BR_BIRACA_IZASLI,PROCENAT_ZA) values ('Ponovljeni drugi','30105','0.38');
+
+
+REM INSERTING into REZULTATI
+SET DEFINE OFF;
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','1');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','2');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','3');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','4');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','5');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','6');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','7');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','8');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','9');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','10');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','11');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Prvi','12');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Ponovljeni prvi','4');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Ponovljeni prvi','7');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Ponovljeni prvi','8');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','1');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','2');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','3');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','4');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','5');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','6');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','7');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','8');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','9');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','10');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','11');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Drugi','12');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Ponovljeni drugi','2');
+Insert into REZULTATI (ID_KRUGA,ID_GLASACKOG_MESTA) values ('Ponovljeni drugi','6');
+
+
+REM INSERTING into REKLAMA
+SET DEFINE OFF;
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,GRAD,ULICA,POVRSINA,AGENCIJA,FNOVINE,FRADIO_TV) values ('1','20000','10','Da','Nis','Bulevar Nemanjica','24','agencija1','Ne','Ne');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,FNOVINE,FRADIO_TV) values ('2','3000','1','Ne','Ne','Ne');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,GRAD,ULICA,POVRSINA,AGENCIJA,FNOVINE,FRADIO_TV) values ('3','17500','30','Da','Nis','Slobodina','16','agencija2','Ne','Ne');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,FNOVINE,NAZIV_NOVINA,BOJA,FRADIO_TV) values ('4','6000','5','Ne','Da','Blic','Ne','Ne');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,FNOVINE,NAZIV_NOVINA,BOJA,FRADIO_TV) values ('5','7000','3','Ne','Da','Politika','Da','Ne');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,FNOVINE,FRADIO_TV,NAZIV_RADIO_TV,BR_EMITOVANJA,TRAJANJE) values ('6','12000','15','Ne','Ne','Da','Pink','30','25');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,FNOVINE,FRADIO_TV,NAZIV_RADIO_TV,BR_EMITOVANJA,TRAJANJE) values ('7','14000','10','Ne','Ne','Da','B92','25','20');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,GRAD,ULICA,POVRSINA,AGENCIJA,FNOVINE,NAZIV_NOVINA,BOJA,FRADIO_TV,NAZIV_RADIO_TV,BR_EMITOVANJA,TRAJANJE) values ('8','30000','7','Da','Beograd','Nikole Tesle','20','agencija3','Da','Alo','Da','Da','Naxi','50','15');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,GRAD,ULICA,POVRSINA,AGENCIJA,FNOVINE,NAZIV_NOVINA,BOJA,FRADIO_TV) values ('9','16500','5','Da','Kraljevo','Kosovska','12','agencija4','Da','Informer','Ne','Ne');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,FNOVINE,NAZIV_NOVINA,BOJA,FRADIO_TV,NAZIV_RADIO_TV,BR_EMITOVANJA,TRAJANJE) values ('10','14000','7','Ne','Da','Blic','Ne','Da','Hit fm','30','15');
+Insert into REKLAMA (ID,CENA,VREMENSKI_PERIOD,FPANO,GRAD,ULICA,POVRSINA,AGENCIJA,FNOVINE,FRADIO_TV,NAZIV_RADIO_TV,BR_EMITOVANJA,TRAJANJE) values ('11','19000','10','Da','Nis','Sremska','16','agencija5','Ne','Da','Play','40','10');
+
+
+REM INSERTING into AKCIJA
+SET DEFINE OFF;
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('1','akcija1','Beograd','Knez Mihajlova','Ne','Ne','Ne','Ne','Ne','2');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('2','Deljenje letaka','Beograd','Knez Mihajlova','Da','Ne','Ne','Ne','Ne','2');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,NAZIV_FIRME,CENA_PROSTORA,ID_KOORDINATORA) values ('3','Miting na zatvorenom','Beograd','Ive Andrica 24','Ne','Ne','Da','Ne','Da','MySpace','11000','2');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,VREME,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('4','Susreti sa gradjanima','Nis','Delta Planet','Ne','Da',TO_DATE('2023-05-20 18:00', 'YYYY-MM-DD HH24:MI'),'Ne','Ne','Ne','3');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('5','Deljenje letaka i miting','Nis','Centar grada','Da','Ne','Da','Da','Ne','3');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,VREME,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('6','Deljenje letaka i susreti','Krusevac','Centar','Da','Da',TO_DATE('2023-05-28 14:00', 'YYYY-MM-DD HH24:MI'),'Ne','Ne','Ne','4');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,NAZIV_FIRME,CENA_PROSTORA,ID_KOORDINATORA) values ('7','Miting','Pozarevac','Zmaj Jovina 72','Ne','Ne','Da','Ne','Da','TopOrganize','8500','4');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,VREME,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('8','Susret i miting','Vranje','Centar grada','Ne','Da',TO_DATE('2023-05-25 12:30', 'YYYY-MM-DD HH24:MI'),'Da','Da','Ne','3');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,ID_KOORDINATORA) values ('9','Deljenje letaka','Kursumlija','Trg u centru','Da','Ne','Ne','Ne','Ne','4');
+Insert into AKCIJA (ID,NAZIV,GRAD,LOKACIJA,FDELJENJE_LETAKA,FSUSRET_SA_GRADJANIMA,FMITING,FNA_OTVORENOM,FNA_ZATVORENOM,NAZIV_FIRME,CENA_PROSTORA,ID_KOORDINATORA) values ('10','Miting na zatvorenom','Bor','Sime Jovanovica 38','Ne','Ne','Da','Ne','Da','OrganizujDog','12000','3');
+
+
+REM INSERTING into GOST
+SET DEFINE OFF;
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('1','Ceca','Raznatovic','Srpska majka');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('2','Mitar','Miric','Pevac');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('3','Ana','Jovanovic','Influenser');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('4','Bojan','Ristic','Glumac');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('5','Jovana','Kostic','Pisac');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('6','Ana','Bekuta','Pevac');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('7','Bojan','Tomovic','Estradni umetnik');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('8','Ivan','Pavlovic','Novinar');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('9','Kristina','Bojovic','Voditelj');
+Insert into GOST (ID,IME,PREZIME,FUNKCIJA) values ('10','Nenad','Igic','Novinar');
+
+
+REM INSERTING into JE_GOST
+SET DEFINE OFF;
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('3','1');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('3','3');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('3','7');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('5','2');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('5','8');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('7','4');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('7','5');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('8','9');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('8','1');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('8','6');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('10','10');
+Insert into JE_GOST (ID_GOSTA,ID_MITINGA) values ('10','3');
+
+
+
+
+REM INSERTING into INTERVJU_NOVINE
+SET DEFINE OFF;
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1,NOVINAR2) values ('1','Alo',TO_DATE('2023-03-18','YYYY-MM-DD'),TO_DATE('2023-04-15','YYYY-MM-DD'),'Ivan Lukic','Ana Simic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1) values ('2','Alo',TO_DATE('2023-04-01','YYYY-MM-DD'),TO_DATE('2023-04-10','YYYY-MM-DD'),'Milos Savic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1,NOVINAR2) values ('3','Informer',TO_DATE('2022-10-25','YYYY-MM-DD'),TO_DATE('2022-11-02','YYYY-MM-DD'),'Bozidar Ognjanovic','Andrija Rakic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,NOVINAR1) values ('4','Informer',TO_DATE('2023-04-13','YYYY-MM-DD'),'Andrija Rakic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1) values ('5','Blic',TO_DATE('2023-01-06','YYYY-MM-DD'),TO_DATE('2023-01-09','YYYY-MM-DD'),'Milica Bozic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1) values ('6','Blic',TO_DATE('2021-09-27','YYYY-MM-DD'),TO_DATE('2021-10-06','YYYY-MM-DD'),'Milica Bozic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1,NOVINAR2) values ('7','Blic',TO_DATE('2023-02-24','YYYY-MM-DD'),TO_DATE('2023-02-27','YYYY-MM-DD'),'Aleksa Bakic','Konstantin Cosic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1,NOVINAR2) values ('8','Politika',TO_DATE('2023-03-16','YYYY-MM-DD'),TO_DATE('2023-03-17','YYYY-MM-DD'),'Mila Saric','Ana Vranic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,NOVINAR1) values ('9','Politika',TO_DATE('2023-04-10','YYYY-MM-DD'),'Branka Joksimovic');
+Insert into INTERVJU_NOVINE (ID,NAZIV_LISTA,DATUM_PISANJA,DATUM_OBJAVLJIVANJA,NOVINAR1) values ('10','Politika',TO_DATE('2023-01-20','YYYY-MM-DD'),TO_DATE('2023-02-01','YYYY-MM-DD'),'Ana Vranic');
+
+
+REM INSERTING into TV_I_RADIO_EMISIJE
+SET DEFINE OFF;
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('1','Pink','Predizborno','Igor Stankovic','0.41');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('2','RTS1','Oko','Jelena Bozic','0.32');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('3','RTS1','Jutro','Milan Kostic','0.60');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('4','Prva','Odluka','Kristina Vuk','0.27');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('5','Naxi','Izbori','Stefan Djuric','0.34');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('6','Prva','Sta ce biti','Slobodan Zivkovic','0.48');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('7','B92','Uoci izbora','Andjela Krsmanovic','0.24');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('8','Happy','Cirilica','Miodrag Maric','0.59');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('9','Hit fm','Ti biras','Aleksandar Zutic','0.19');
+Insert into TV_I_RADIO_EMISIJE (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('10','Pink','Vikend jutro','Jovana Jeremic','0.23');
+
+
+REM INSERTING into TV_DUELI
+SET DEFINE OFF;
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('1','Prva','Odluka','Kristina Vuk','0.34');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('2','Pink','Predizborno','Anja Savic','0.18');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('3','RTS1','Ko','Zoran Radonjic','0.16');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('4','RTS1','Izbori','Stefan Djuric','0.26');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('5','B92','Uoci izbora','Andjela Krsmanovic','0.24');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('6','Prva','Sta ce biti','Slobodan Zivkovic','0.48');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('7','RTS1','Oko','Jelena Bozic','0.32');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('8','B92','Ko ce pobediti','Andjela Krsmanovic','0.25');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('9','Happy','Situacija','Marinko Ristic','0.16');
+Insert into TV_DUELI (ID,NAZIV_STANICE,NAZIV_EMISIJE,IME_VODITELJA,GLEDANOST) values ('10','Pink','Vikend jutro','Jovana Jeremic','0.23');
+
+
+REM INSERTING into PROTIVKANDIDATI
+SET DEFINE OFF;
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('1','Dusan Radanovic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('5','Dusan Radanovic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('8','Dusan Radanovic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('9','Dusan Radanovic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('2','Stefan Djordjevic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('4','Stefan Djordjevic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('5','Stefan Djordjevic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('10','Stefan Djordjevic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('7','Stefan Djordjevic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('3','Milorad Ilic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('4','Milorad Ilic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('8','Milorad Ilic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('6','Milorad Ilic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('3','Jovan Sretenovic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('10','Jovan Sretenovic');
+Insert into PROTIVKANDIDATI (ID_DUELA,PROTIVKANDIDAT) values ('1','Jovan Sretenovic');
+
+
+REM INSERTING into SPISAK_PITANJA
+SET DEFINE OFF;
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('1','Sta su vasi ciljevi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('1','Na koji nacin ce se poboljsati standard gradjana ako Vas izaberu');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('2','Da li ce se povecati plate gradjanima drzave');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('2','Na koji nacin cete unaprediti drzavu za godinu dana');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('3','Sta smatrate da je neophodno promeniti u drzavi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('3','Sta su vasi ciljevi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('4','Na koji nacin ce se poboljsati standard gradjana ako Vas izaberu');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('4','Da li ce se povecati plate gradjanima drzave');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('5','Na koji nacin cete unaprediti drzavu za godinu dana');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('6','Sta smatrate da je neophodno promeniti u drzavi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('6','Sta su vasi ciljevi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('6','Na koji nacin ce se poboljsati standard gradjana ako Vas izaberu');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('7','Da li ce se povecati plate gradjanima drzave');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('7','Na koji nacin cete unaprediti drzavu za godinu dana');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('8','Sta smatrate da je neophodno promeniti u drzavi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('8','Sta su vasi ciljevi');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('9','Na koji nacin ce se poboljsati standard gradjana ako Vas izaberu');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('10','Da li ce se povecati plate gradjanima drzave');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('10','Na koji nacin cete unaprediti drzavu za godinu dana');
+Insert into SPISAK_PITANJA (ID_DUELA,PITANJE) values ('10','Sta smatrate da je neophodno promeniti u drzavi');
+
